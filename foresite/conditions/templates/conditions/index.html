@@ -1,0 +1,76 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'conditions/styles.css' %}" />
+
+<div>
+	<div class="topTitle">
+<H1 ALIGN=CENTER>{{title}}</H1>
+<H2 ALIGN=CENTER>{{weather_time}}</H2></A>
+	</div>
+</div>
+
+
+<BR>
+
+<H2 ALIGN=LEFT>Current Weather in Bogue</H2></A>
+
+<!--
+<form action="" method="post">
+    <label for="city_name">City: </label>
+    {% csrf_token %}
+    <input id="city_name" type="text" name="city_name" value="{{ weather_location }}">
+    <input type="submit" value="OK">
+</form>
+-->
+
+<table border="1" style="width:15%">
+	<tr>
+	<td>
+<P ALIGN=CENTER>
+{{weather_status|title}}
+<BR>
+{% if weather_status == "Clear" and not nighttime %}
+<img src="{% static "conditions/images/weather/clear.png" %}" alt="Weather Icon Image"/>
+{% elif weather_status == "Clouds" %}
+<img src="{% static "conditions/images/weather/cloudy.png" %}" alt="Weather Icon Image"/>
+{% elif weather_status == "Rain" %}
+<img src="{% static "conditions/images/weather/rain03.png" %}" alt="Weather Icon Image"/>
+{% elif weather_status == "Fog" %}
+<img src="{% static "conditions/images/weather/fog.png" %}" alt="Weather Icon Image"/>
+{% endif %}
+{{weather_temp}}
+<br>
+</P></A>
+</td>
+</tr>
+</table>
+
+<BR>
+
+<H2 ALIGN=LEFT>Onslow Oceanic Information</H2></A>
+
+<P ALIGN=LEFT<B>Current wave height: {{ current_wave_height }} feet</B></P></A>
+<P ALIGN=LEFT<B>Current wave duration: {{ current_wave_duration }} seconds</B></P></A>
+
+<BR>
+
+<P ALIGN=LEFT<B>Tomorrow's wave height: {{ tomorrow_wave_height }} feet</B></P></A>
+<P ALIGN=LEFT<B>Tomorrow's wave duration: {{ tomorrow_wave_duration }} seconds</B></P></A>
+
+<BR>
+
+<P ALIGN=LEFT<B>Day After Tomorrow's wave height: {{ day_after_tomorrow_wave_height }} feet</B></P></A>
+<P ALIGN=LEFT<B>Day After Tomorrow's wave duration: {{ day_after_tomorrow_wave_duration }} seconds</B></P></A>
+
+
+<table style="width:15%" ALIGN=RIGHT>
+<div>
+	<tr>
+	<td>
+	<div class="rightFooter">
+<a href="http://openweathermap.org/"><img class="center-displayed" src="{% static "conditions/images/owm_logo.png" %}"></a>
+<a href="http://magicseaweed.com"><img src="{% static "conditions/images/msw_powered_by.png" %}"></a>
+
+	</tr>
+	</td>
+</div>
+</table>

@@ -1,0 +1,21 @@
+body {
+font-family: monospace;
+background-color: #97B1CA;
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+.topTitle {
+    border-style: solid;
+    border-width: 5px;
+    background-image: url("/static/conditions/images/foresite_banner_small.png");
+}
+IMG.center-displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+}
+
+
